@@ -6,9 +6,8 @@ from corpus import get_vocab_size, encode
 
 
 def vectorization():
-    loader = Loader()
-    queries = loader.load(settings.INPUTS)
-    answers = loader.load(settings.OUTPUTS)
+    queries = Loader.load(settings.INPUTS)
+    answers = Loader.load(settings.OUTPUTS)
 
     # 1つ目の長さでいいのか?
     input_max_len = len(queries[0])

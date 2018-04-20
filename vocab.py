@@ -12,13 +12,12 @@ class VocabBuilder:
 
 def build_vocabulary():
     """ 文字ベースの一覧表を作成 """
-    loader = Loader()
     builder = VocabBuilder()
 
     vocabulary = set()
 
-    input_data = loader.load(settings.INPUTS)
-    output_data = loader.load(settings.OUTPUTS)
+    input_data = Loader.load(settings.INPUTS)
+    output_data = Loader.load(settings.OUTPUTS)
 
     builder.build(input_data, vocabulary)
     builder.build(output_data, vocabulary)
@@ -30,8 +29,8 @@ def build_vocabulary():
     char_id = dict((c, i) for (i, c) in enumerate(vocabulary))
     id_char = dict((i, c) for (i, c) in enumerate(vocabulary))
 
-    loader.save_pickle(char_id, settings.CHAR_ID_PKL)
-    loader.save_pickle(id_char, settings.ID_CHAR_PKL)
+    Loader.save_pickle(char_id, settings.CHAR_ID_PKL)
+    Loader.save_pickle(id_char, settings.ID_CHAR_PKL)
 
     print('Done!')
 
