@@ -1,7 +1,7 @@
 import os
 import datetime
 
-PROJECT = 'rap'
+PROJECT = os.getenv('PROJECT', None)
 TIMESTAMP = datetime.datetime.now().strftime('%y%m%d-%H%M')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
