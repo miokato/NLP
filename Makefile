@@ -15,3 +15,13 @@ vector:
 .PHONY: train
 train:
 	python train.py
+
+
+.PHONY: aws-up
+aws-up:
+	aws s3 sync ./data s3://nlp-concierge/data
+
+
+.PHONY: aws-ls
+aws-ls:
+	aws s3 ls s3://nlp-concierge/data/ --recursive --human-readable --summalize
