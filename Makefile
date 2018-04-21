@@ -8,13 +8,13 @@ oyomi:
 
 .PHONY: vector
 vector:
-	python parser.py
-	python preprocess.py
+	python3 parser.py
+	python3 preprocess.py
 
 
 .PHONY: train
 train:
-	python train.py
+	python3 train.py
 
 
 .PHONY: aws-up
@@ -25,3 +25,8 @@ aws-up:
 .PHONY: aws-ls
 aws-ls:
 	aws s3 ls s3://nlp-concierge/data/ --recursive --human-readable --summalize
+
+
+.PHONY: aws-down
+aws-down:
+	aws s3 sync s3://nlp-concierge/data ./data
