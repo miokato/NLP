@@ -21,6 +21,7 @@ def vectorization():
     for i, sent in enumerate(queries):
         print(i)
         sent = sent.strip('\n')
+        sent = sent[::-1]
         x[i] = encode(sent, input_max_len)
     # encode answers
     for i, sent in enumerate(answers):
