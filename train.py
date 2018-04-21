@@ -34,7 +34,7 @@ model.compile(
 )
 model.summary()
 
-for _ in range(1, 10):
+for _ in range(1, 100):
     print()
     print('-' * 50)
 
@@ -60,4 +60,5 @@ for _ in range(1, 10):
             print('fail')
         print(guess)
         print('---')
-        model.save(settings.MODEL)
+model.save(settings.MODEL)
+print('Finish training')
