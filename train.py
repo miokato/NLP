@@ -21,7 +21,7 @@ print(x_train.shape)
 print(y_train.shape)
 
 HIDDEN_SIZE = 256
-BATCH_SIZE = 128
+BATCH_SIZE = 256
 
 early_stopping = EarlyStopping(monitor='val_loss', patience=2)
 
@@ -34,7 +34,7 @@ model.compile(
 )
 model.summary()
 
-for _ in range(1, 100):
+for _ in range(1, 10):
     print()
     print('-' * 50)
 
@@ -60,3 +60,4 @@ for _ in range(1, 100):
             print('fail')
         print(guess)
         print('---')
+        model.save(settings.MODEL)
