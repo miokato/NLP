@@ -22,6 +22,7 @@ def build_vocabulary():
     builder.build(input_data, vocabulary)
     builder.build(output_data, vocabulary)
 
+    vocabulary.add(settings.STOP_WORD)
     vocabulary = sorted(list(vocabulary))
 
     # 必要のない文字は削除する
