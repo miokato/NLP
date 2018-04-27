@@ -1,5 +1,5 @@
 from unittest import TestCase
-from preprocess import get_char_and_ctable, CharacterTable, get_char_id
+from preprocess.preprocess import get_char_and_ctable
 
 
 class CTableTestCase(TestCase):

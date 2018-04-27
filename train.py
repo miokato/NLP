@@ -3,7 +3,7 @@ import numpy as np
 from keras.callbacks import EarlyStopping
 import settings
 from model import model_1
-from corpus import decode
+from preprocess.corpus import decode
 
 
 print('Loading data')

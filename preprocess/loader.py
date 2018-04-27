@@ -19,5 +19,3 @@ class Loader:
     def save_pickle(data: dict, path: str):
         with open(path, 'wb') as f:
             pickle.dump(obj=data, file=f)
-
-

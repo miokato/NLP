@@ -1,5 +1,22 @@
 import settings
-from loader import Loader
+from preprocess.loader import Loader
+
+
+def clean_meidai(min_len, max_len):
+    inputs = Loader.load(settings.INPUTS)
+    outputs = Loader.load(settings.OUTPUTS)
+    input_result, output_result = [], []
+    for input_line, output_line in zip(inputs, outputs):
+
+        input_line = input_line.split(' ')[1]
+        output_line = output_line.split(' ')[1]
+
+        if (min_len < len(input_line) < max_len) and (min_len < len(output_line) < max_len):
+            input_result.append(input_line)
+            output_result.append(output_line)
+
+    Loader.save(input_result, settings.INPUTS)
+    Loader.save(output_result, settings.OUTPUTS)
 
 
 def separate_input_output():
@@ -65,5 +82,6 @@ def rm_space_input_output():
 
 if __name__ == '__main__':
     separate_input_output()
-    padding_input_output()
+    clean_meidai(min_len=10, max_len=60)
+    # padding_input_output()
 

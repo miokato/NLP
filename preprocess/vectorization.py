@@ -1,8 +1,8 @@
 import numpy as np
 
 import settings
-from loader import Loader
-from corpus import get_vocab_size, encode
+from preprocess.loader import Loader
+from preprocess.corpus import get_vocab_size, encode
 
 
 def vectorization():

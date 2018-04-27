@@ -1,4 +1,4 @@
-from loader import Loader
+from preprocess.loader import Loader
 import settings
 
 
