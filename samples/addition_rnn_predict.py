@@ -1,6 +1,6 @@
 import pickle
 
-from addition_rnn import Generator
+from samples.addition_rnn import Generator
 
 
 with open('data/c_to_i.pkl', 'rb') as f:

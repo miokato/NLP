@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import re
-import settings
+from samples import settings
 
 
 class NovelQuery:

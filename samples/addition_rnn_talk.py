@@ -2,7 +2,7 @@ from keras.callbacks import EarlyStopping, ModelCheckpoint
 import numpy as np
 import pickle
 
-from addition_rnn import CharacterTable, seq2seq
+from samples.addition_rnn import CharacterTable, seq2seq
 
 
 with open('data/corpus.distinct.txt', 'rt') as f:
